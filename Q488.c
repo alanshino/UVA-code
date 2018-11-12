@@ -2,22 +2,26 @@
 #include <stdlib.h>
 
 int main(){
-    int n,i,j,k;
-    int high,length;
-    scanf("%d",&n);
-    for (i=1;i<=n;i++){
-        scanf("%d",&j);
-        for (k=1;k<=j;k++){
-            for (high=1;high<=k;high++){
-                printf("%d",k);
+    int n,i,A,F,k,e,high=0;
+    while (scanf("%d",&n)!=EOF){
+        for (e=0;e<n;e++){
+            scanf("%d%d",&A,&F);
+            if(e) printf( "\n" );
+            for (i=0;i<F;i++){
+                if(i) printf( "\n" );
+                for (k=1;k<=A;k++){
+                    for (high=1;high<=k;high++){
+                        printf("%d",k);
+                    }
+                    printf("\n");
+                }
+                for (k=A-1;k>=1;k--){
+                    for (high=1;high<=k;high++){
+                        printf("%d",k);
+                    }
+                    printf("\n");
+                }
             }
-            printf("\n");
-        }
-        for (length=k-2;length>=1;length--){
-            for (j=1;j<=length;j++){
-                printf("%d",length);
-            }
-            printf("\n");
         }
     }
     return 0;
